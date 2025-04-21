@@ -1,0 +1,15 @@
+from qiskit import QuantumCircuit, Aer, execute
+from qiskit.visualization import plot_histogram
+qc = QuantumCircuit(3, 2)
+qc.x(2)
+qc.h([0, 1, 2])
+qc.cx(0, 2)
+qc.cx(1, 2)
+qc.h([0, 1])
+qc.measure([0, 1], [0, 1])
+simulator = Aer.get_backend('qasm_simulator')
+job = execute(qc, simulator, shots=1024)
+result = job.result()
+counts = result.get_counts()
+print(counts)
+plot_histogram(counts)
