@@ -104,11 +104,7 @@ Feel free to use and modify with attribution.
 
 Happy coding — and welcome to the quantum future. ⚛️
 
-yaml
-Copy
-Edit
 
----
 
 
 
